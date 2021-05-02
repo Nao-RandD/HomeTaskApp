@@ -6,14 +6,25 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
+
+    // インスタンス変数
+    var DBRef: DatabaseReference!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        //インスタンスを作成
+        DBRef = Database.database().reference()
     }
 
-
+    @IBAction func add(_ sender: AnyObject) {
+        let data = ["name": textField.text!]
+        DBRef.child("user/01").setValue(data)
+    }
 }
 
