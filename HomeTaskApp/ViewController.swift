@@ -10,7 +10,8 @@ import Firebase
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var taskLabel: UILabel!
 
     // インスタンス変数
     var DBRef: DatabaseReference!
@@ -25,6 +26,23 @@ class ViewController: UIViewController {
     @IBAction func add(_ sender: AnyObject) {
         let data = ["name": textField.text!]
         DBRef.child("user/01").setValue(data)
+    }
+    @IBAction func tapButton1(_ sender: Any) {
+        setLabel("掃除")
+    }
+    @IBAction func tapButton2(_ sender: Any) {
+        setLabel("洗濯")
+    }
+    @IBAction func tapButton3(_ sender: Any) {
+        setLabel("皿洗い")
+    }
+    @IBAction func tapButton4(_ sender: Any) {
+        setLabel("その他")
+    }
+
+    private func setLabel(_ btText: String) {
+        let text = "\(btText)のボタンが選択されています"
+        taskLabel.text = text
     }
 }
 
