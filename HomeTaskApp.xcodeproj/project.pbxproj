@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9F2A410D263EAED8001A97C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F2A410C263EAED7001A97C2 /* GoogleService-Info.plist */; };
+		9F5F992C2650BA550045BCB5 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F992B2650BA550045BCB5 /* EditViewController.swift */; };
 		9F6246A5262DBB8D003B0195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6246A4262DBB8D003B0195 /* AppDelegate.swift */; };
 		9F6246A7262DBB8D003B0195 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6246A6262DBB8D003B0195 /* SceneDelegate.swift */; };
 		9F6246A9262DBB8D003B0195 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6246A8262DBB8D003B0195 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		6BC07B3B1AB3719DDF341008 /* Pods-HomeTaskApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeTaskApp.release.xcconfig"; path = "Target Support Files/Pods-HomeTaskApp/Pods-HomeTaskApp.release.xcconfig"; sourceTree = "<group>"; };
 		9F2A410C263EAED7001A97C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9F5F992B2650BA550045BCB5 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		9F6246A1262DBB8D003B0195 /* HomeTaskApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeTaskApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F6246A4262DBB8D003B0195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F6246A6262DBB8D003B0195 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				9F6246AD262DBB90003B0195 /* Assets.xcassets */,
 				9F6246AF262DBB90003B0195 /* LaunchScreen.storyboard */,
 				9F6246B2262DBB90003B0195 /* Info.plist */,
+				9F5F992B2650BA550045BCB5 /* EditViewController.swift */,
 			);
 			path = HomeTaskApp;
 			sourceTree = "<group>";
@@ -91,7 +94,6 @@
 				E5203B2C84D89344EDEC4F60 /* Pods-HomeTaskApp.debug.xcconfig */,
 				6BC07B3B1AB3719DDF341008 /* Pods-HomeTaskApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5F992C2650BA550045BCB5 /* EditViewController.swift in Sources */,
 				9F6246A9262DBB8D003B0195 /* ViewController.swift in Sources */,
 				9F6246A5262DBB8D003B0195 /* AppDelegate.swift in Sources */,
 				9F6246A7262DBB8D003B0195 /* SceneDelegate.swift in Sources */,
@@ -361,7 +364,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 44SQBVTPVY;
 				INFOPLIST_FILE = HomeTaskApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +385,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 44SQBVTPVY;
 				INFOPLIST_FILE = HomeTaskApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

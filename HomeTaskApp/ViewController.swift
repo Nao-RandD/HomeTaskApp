@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var taskLabel: UILabel!
 
+    private var taskSelect = ""
+    private var taskPoint = 0
+
     // インスタンス変数
     var DBRef: DatabaseReference!
 
@@ -24,25 +27,27 @@ class ViewController: UIViewController {
     }
 
     @IBAction func add(_ sender: AnyObject) {
-        let data = ["name": textField.text!]
+        let data = ["name": taskSelect, "task": taskPoint] as [String : Any]
         DBRef.child("user/01").setValue(data)
     }
     @IBAction func tapButton1(_ sender: Any) {
-        setLabel("掃除")
+        setLabel("掃除", 5)
     }
     @IBAction func tapButton2(_ sender: Any) {
-        setLabel("洗濯")
+        setLabel("洗濯", 10)
     }
     @IBAction func tapButton3(_ sender: Any) {
-        setLabel("皿洗い")
+        setLabel("皿洗い", 3)
     }
     @IBAction func tapButton4(_ sender: Any) {
-        setLabel("その他")
+        setLabel("その他", 1)
     }
 
-    private func setLabel(_ btText: String) {
+    private func setLabel(_ btText: String, _ point: Int) {
         let text = "\(btText)のボタンが選択されています"
         taskLabel.text = text
+        taskSelect = btText
+        taskPoint = point
     }
 }
 
