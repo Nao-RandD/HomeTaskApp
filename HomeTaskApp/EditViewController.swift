@@ -30,18 +30,22 @@ class EditViewController: UIViewController {
     }
 
     @IBAction func getDataFirebase(_ sender: Any) {
-        self.DBRef.child("user/01").getData { (error, snapshot) in
+        self.DBRef.child("user").getData { (error, snapshot) in
             if let error = error {
                 print("Error getting data \(error)")
                 self.dataLabel.text = "\(error)"
             }
             else if snapshot.exists() {
                 print("Got data \(snapshot.value!)")
-                self.dataLabel.text = "\(snapshot.value ?? "データなし")"
+                DispatchQueue.main.async {
+                    self.dataLabel.text = "\(snapshot.value)"
+                }
             }
             else {
                 print("No data available")
-                self.dataLabel.text = "データなし"
+                DispatchQueue.main.async {
+                    self.dataLabel.text = "データなし"
+                }
             }
         }
     }

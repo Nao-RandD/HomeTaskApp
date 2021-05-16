@@ -27,8 +27,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func add(_ sender: AnyObject) {
-        let data = ["name": textField.text!]
-        DBRef.childByAutoId().setValue(data)
+        let data = ["name": taskSelect, "point":
+                        taskPoint] as [String : Any]
+        DBRef.child("user").childByAutoId().setValue(data)
+        print("タスク\(taskSelect)が選択されており、ポイントは\(taskPoint)です")
     }
     @IBAction func tapButton1(_ sender: Any) {
         setLabel("掃除", 5)
