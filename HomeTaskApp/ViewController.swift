@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 
     @IBAction func add(_ sender: AnyObject) {
         let data = ["name": textField.text!]
-        DBRef.child("user/01").setValue(data)
+        DBRef.childByAutoId().setValue(data)
     }
     @IBAction func tapButton1(_ sender: Any) {
         setLabel("掃除")
