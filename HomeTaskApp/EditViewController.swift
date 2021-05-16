@@ -37,6 +37,7 @@ class EditViewController: UIViewController {
             }
             else if snapshot.exists() {
                 print("Got data \(snapshot.value!)")
+                // メインスレッドでUIを更新する
                 DispatchQueue.main.async {
                     self.dataLabel.text = "\(snapshot.value)"
                 }
