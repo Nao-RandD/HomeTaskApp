@@ -29,7 +29,9 @@ class ViewController: UIViewController {
     @IBAction func add(_ sender: AnyObject) {
         let data = ["name": taskSelect, "point":
                         taskPoint] as [String : Any]
-        DBRef.child("user").childByAutoId().setValue(data)
+//        DBRef.child("user").childByAutoId().setValue(data)
+        DBRef.childByAutoId().setValue(data)
+
         print("タスク\(taskSelect)が選択されており、ポイントは\(taskPoint)です")
     }
     @IBAction func tapButton1(_ sender: Any) {

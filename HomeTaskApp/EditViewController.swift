@@ -11,22 +11,33 @@ import UIKit
 
 class EditViewController: UIViewController {
     @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
 
     // インスタンス変数
-    var DBRef: DatabaseReference!
+    private var DBRef: DatabaseReference!
+    private var userPoint: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         //インスタンスを作成
         DBRef = Database.database().reference()
 
-//        DBRef.observe(.childAdded, with: { snapshot in
-//            if let obj = snapshot.value as? [String : AnyObject],
-//               let name = obj["name"] as? String,let message = obj["message"] {
-//                let currentText = self.textView.text
-//                self.textView.text = (currentText ?? "") + "\n\(name) : \(message)"
-//            }
-//        })
+        DBRef.observe(.childAdded, with: { snapshot in
+//            dump(snapshot) // 一覧表示したいとき
+            if let obj = snapshot.value as? [String : AnyObject],
+                let name = obj["name"] as? String,let point = obj["point"] as? Int {
+                let currentText = self.textView.text
+                self.textView.text = (currentText ?? "") + "\n\(name) : \(point)"
+                self.sumUserPoint(point)
+            } else {
+                print("データ情報に誤りあり？")
+            }
+        })
+    }
+
+    private func sumUserPoint(_ point: Int) {
+        userPoint += point
+        dataLabel.text = "あなたのポイント合計は\(userPoint)です"
     }
 
     @IBAction func getDataFirebase(_ sender: Any) {
