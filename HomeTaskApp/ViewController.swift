@@ -15,6 +15,7 @@ class ViewController: UIViewController {
 
     private var taskSelect = ""
     private var taskPoint = 0
+    private let dateFomatter = DateFormatter()
 
     // インスタンス変数
     var DBRef: DatabaseReference!
@@ -22,18 +23,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        dateFomatter.dateFormat = "yyyy/MM/dd"
         //インスタンスを作成
         DBRef = Database.database().reference()
     }
 
     @IBAction func add(_ sender: AnyObject) {
-        let data = ["name": taskSelect, "point":
-                        taskPoint] as [String : Any]
-//        DBRef.child("user").childByAutoId().setValue(data)
-        DBRef.childByAutoId().setValue(data)
+        let data = ["name": taskSelect, "point": taskPoint,
+                    "date": dateFomatter.string(from: Date())] as [String : Any]
+        DBRef.child("user").childByAutoId().setValue(data)
+//        DBRef.childByAutoId().setValue(data)
 
         print("タスク\(taskSelect)が選択されており、ポイントは\(taskPoint)です")
     }
+
     @IBAction func tapButton1(_ sender: Any) {
         setLabel("掃除", 5)
     }
