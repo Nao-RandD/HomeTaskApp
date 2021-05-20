@@ -24,14 +24,30 @@ class EditViewController: UIViewController {
 
         DBRef.observe(.childAdded, with: { snapshot in
 //            dump(snapshot) // 一覧表示したいとき
-            if let obj = snapshot.value as? [String : AnyObject],
-                let name = obj["name"] as? String,let point = obj["point"] as? Int {
-                let currentText = self.textView.text
-                self.textView.text = (currentText ?? "") + "\n\(name) : \(point)"
-                self.sumUserPoint(point)
-            } else {
-                print("データ情報に誤りあり？")
+            for child in snapshot.children {
+                let subObj = child as? DataSnapshot
+                if let obj = subObj?.value as? [String : AnyObject],
+                    let name = obj["name"] as? String,
+                    let point = obj["point"] as? Int,
+                    let date = obj["date"] as? String {
+
+                    let currentText = self.textView.text
+                    self.textView.text = (currentText ?? "") + "\n\(name) : \(point)point || \(date)"
+                    self.sumUserPoint(point)
+                } else {
+                    print("データ情報に誤りあり？")
+                }
             }
+
+//            if let obj = snapshot.value as? [String : AnyObject],
+//                let user = obj["user"] as? String {
+//                print("選択は\(user)です")
+//                let currentText = self.textView.text
+//                self.textView.text = (currentText ?? "") + "\n\(name) : \(point)"
+//                self.sumUserPoint(point)
+//            } else {
+//                print("データ情報に誤りあり？")
+//            }
         })
     }
 
@@ -48,9 +64,14 @@ class EditViewController: UIViewController {
             }
             else if snapshot.exists() {
                 print("Got data \(snapshot.value!)")
+                let subObj = snapshot.children as? DataSnapshot
+                let obj = subObj?.value as? [String : AnyObject]
+                dump(obj)
+                let task = obj?["name"] as? String
+                print("Data is \(task)")
                 // メインスレッドでUIを更新する
                 DispatchQueue.main.async {
-                    self.dataLabel.text = "\(snapshot.value)"
+                    self.dataLabel.text = "\(task)"
                 }
             }
             else {
