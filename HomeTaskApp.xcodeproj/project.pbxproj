@@ -15,6 +15,7 @@
 		9F6246AC262DBB8D003B0195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6246AA262DBB8D003B0195 /* Main.storyboard */; };
 		9F6246AE262DBB90003B0195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6246AD262DBB90003B0195 /* Assets.xcassets */; };
 		9F6246B1262DBB90003B0195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6246AF262DBB90003B0195 /* LaunchScreen.storyboard */; };
+		9FD4E4062657BA990011F283 /* AllUserPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4E4052657BA990011F283 /* AllUserPointViewController.swift */; };
 		AD310E2148A6A7B5788AF1A1 /* Pods_HomeTaskApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB259D3702010514CB73930 /* Pods_HomeTaskApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		9F6246AD262DBB90003B0195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F6246B0262DBB90003B0195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F6246B2262DBB90003B0195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FD4E4052657BA990011F283 /* AllUserPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUserPointViewController.swift; sourceTree = "<group>"; };
 		DEB259D3702010514CB73930 /* Pods_HomeTaskApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeTaskApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5203B2C84D89344EDEC4F60 /* Pods-HomeTaskApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeTaskApp.debug.xcconfig"; path = "Target Support Files/Pods-HomeTaskApp/Pods-HomeTaskApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 				9F6246AF262DBB90003B0195 /* LaunchScreen.storyboard */,
 				9F6246B2262DBB90003B0195 /* Info.plist */,
 				9F5F992B2650BA550045BCB5 /* EditViewController.swift */,
+				9FD4E4052657BA990011F283 /* AllUserPointViewController.swift */,
 			);
 			path = HomeTaskApp;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F5F992C2650BA550045BCB5 /* EditViewController.swift in Sources */,
+				9FD4E4062657BA990011F283 /* AllUserPointViewController.swift in Sources */,
 				9F6246A9262DBB8D003B0195 /* ViewController.swift in Sources */,
 				9F6246A5262DBB8D003B0195 /* AppDelegate.swift in Sources */,
 				9F6246A7262DBB8D003B0195 /* SceneDelegate.swift in Sources */,
