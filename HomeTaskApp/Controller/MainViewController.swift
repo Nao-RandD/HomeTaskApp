@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  HomeTaskApp
 //
 //  Created by Naoyuki Kan on 2021/04/19.
@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet private weak var taskLabel: UILabel!
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     private var taskSelect = ""
     private var taskPoint = 0
     private let dateFomatter = DateFormatter()
-    private var userName = "Default"
+    private var userName = "Ryoya"
 
     // インスタンス変数
     var DBRef: DatabaseReference!
@@ -52,6 +52,7 @@ class ViewController: UIViewController {
         setLabel("その他", 1)
     }
 
+    // 選択中のタスクをUIに更新
     private func setLabel(_ btText: String, _ point: Int) {
         let text = "\(btText)のボタンが選択されています"
         taskLabel.text = text
