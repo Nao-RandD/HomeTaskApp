@@ -35,20 +35,6 @@ class EditViewController: UIViewController {
                 } else {
                     print("データ情報に誤りあり？")
                 }
-
-//                var hoge = ""
-//                print(snapshot.key, type(of: value))
-//                if let val = dataSnapshot.value(forKey: "name") as? String {
-//                    hoge = val
-//                }
-//                if let val = dataSnapshot.value(forKey: "point") as? String {
-//                    hoge = val
-//                }
-//                if let val = dataSnapshot.value(forKey: "date") as? String {
-//                    hoge = val
-//                }
-
-//                print(hoge)
             }
         }){ (error) in
             print(error)

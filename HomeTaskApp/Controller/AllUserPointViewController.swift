@@ -41,6 +41,7 @@ class AllUserPointViewController: UIViewController {
 //            self.calPoint(snapshot: snapshot)
 //        })
 
+        // ユーザー全てのObserverを設定
         for user in allUsers {
             print(user)
             DBRef.child(user).observeSingleEvent(of: .value, with: { snapshot in

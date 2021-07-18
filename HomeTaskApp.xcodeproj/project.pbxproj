@@ -16,6 +16,7 @@
 		9F6246AE262DBB90003B0195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6246AD262DBB90003B0195 /* Assets.xcassets */; };
 		9F6246B1262DBB90003B0195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6246AF262DBB90003B0195 /* LaunchScreen.storyboard */; };
 		9F7B6CAF269F0DA3006E6513 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7B6CAE269F0DA3006E6513 /* User.swift */; };
+		9F96DB2426A2F80C006BF0CA /* TaskCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F96DB2326A2F80C006BF0CA /* TaskCategory.swift */; };
 		9F985D492695DD900004A3B7 /* TaskPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F985D482695DD900004A3B7 /* TaskPointModel.swift */; };
 		9FD4E4062657BA990011F283 /* AllUserPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4E4052657BA990011F283 /* AllUserPointViewController.swift */; };
 		AD310E2148A6A7B5788AF1A1 /* Pods_HomeTaskApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB259D3702010514CB73930 /* Pods_HomeTaskApp.framework */; };
@@ -34,6 +35,7 @@
 		9F6246B0262DBB90003B0195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F6246B2262DBB90003B0195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F7B6CAE269F0DA3006E6513 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9F96DB2326A2F80C006BF0CA /* TaskCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCategory.swift; sourceTree = "<group>"; };
 		9F985D482695DD900004A3B7 /* TaskPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPointModel.swift; sourceTree = "<group>"; };
 		9FD4E4052657BA990011F283 /* AllUserPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUserPointViewController.swift; sourceTree = "<group>"; };
 		DEB259D3702010514CB73930 /* Pods_HomeTaskApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeTaskApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +83,6 @@
 		9F6246A3262DBB8D003B0195 /* HomeTaskApp */ = {
 			isa = PBXGroup;
 			children = (
-				9F7B6CAE269F0DA3006E6513 /* User.swift */,
 				9F985D472695DCEB0004A3B7 /* Controller */,
 				9F985D462695DCDA0004A3B7 /* View */,
 				9F985D452695DCD10004A3B7 /* Model */,
@@ -92,8 +93,6 @@
 				9F6246AD262DBB90003B0195 /* Assets.xcassets */,
 				9F6246AF262DBB90003B0195 /* LaunchScreen.storyboard */,
 				9F6246B2262DBB90003B0195 /* Info.plist */,
-				9F5F992B2650BA550045BCB5 /* EditViewController.swift */,
-				9FD4E4052657BA990011F283 /* AllUserPointViewController.swift */,
 			);
 			path = HomeTaskApp;
 			sourceTree = "<group>";
@@ -108,7 +107,9 @@
 		9F985D452695DCD10004A3B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9F7B6CAE269F0DA3006E6513 /* User.swift */,
 				9F985D482695DD900004A3B7 /* TaskPointModel.swift */,
+				9F96DB2326A2F80C006BF0CA /* TaskCategory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,6 +126,8 @@
 			children = (
 				9F74B0A4269B125600A97264 /* Content */,
 				9F6246A8262DBB8D003B0195 /* MainViewController.swift */,
+				9F5F992B2650BA550045BCB5 /* EditViewController.swift */,
+				9FD4E4052657BA990011F283 /* AllUserPointViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				9F6246A9262DBB8D003B0195 /* MainViewController.swift in Sources */,
 				9F6246A5262DBB8D003B0195 /* AppDelegate.swift in Sources */,
 				9F6246A7262DBB8D003B0195 /* SceneDelegate.swift in Sources */,
+				9F96DB2426A2F80C006BF0CA /* TaskCategory.swift in Sources */,
 				9F7B6CAF269F0DA3006E6513 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
