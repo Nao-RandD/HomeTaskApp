@@ -12,6 +12,7 @@ class AllUserPointViewController: UIViewController {
     // インスタンス変数
     private var DBRef: DatabaseReference!
     private let allUsers = User.allCases.map { $0.name }
+    private var taskList = ["洗濯入れ", "洗濯出し", "食器入れ", "食器出し" ]
 
     // UI上の値
     @IBOutlet weak var firstUserName: UILabel!
@@ -25,6 +26,12 @@ class AllUserPointViewController: UIViewController {
     @IBOutlet weak var thirdUserName: UILabel!
     @IBOutlet var thirdUserLabel: [UILabel]!
     @IBOutlet weak var thirdUserSum: UILabel!
+
+    @IBOutlet var firstTaskCollection: [UILabel]!
+    @IBOutlet var secondTaskCollection: [UILabel]!
+    @IBOutlet var thirdTaskCollection: [UILabel]!
+
+
 
     // ポイント管理の変数
     private var taskPoint1: Int = 0
@@ -40,6 +47,7 @@ class AllUserPointViewController: UIViewController {
 //        DBRef.child("default").observe(.childAdded, with: { snapshot in
 //            self.calPoint(snapshot: snapshot)
 //        })
+        setTaskLabel()
 
         // ユーザー全てのObserverを設定
         for user in allUsers {
@@ -85,15 +93,29 @@ class AllUserPointViewController: UIViewController {
         }
     }
 
+    private func setTaskLabel() {
+        firstUserName.text = allUsers[0]
+        secondUserName.text = allUsers[1]
+        thirdUserName.text = allUsers[2]
+
+        var i = 0
+        for task in taskList {
+            firstTaskCollection[i].text = task
+            secondTaskCollection[i].text = task
+            thirdTaskCollection[i].text = task
+            i += 1
+        }
+    }
+
     private func hoge(taskLabels: [UILabel], totalValue: UILabel, point: Int, taskName: String) {
         switch taskName {
-        case "洗濯":
+        case taskList[0]:
             taskPoint1 += point
             taskLabels[0].text = String(taskPoint1)
-        case "掃除":
+        case taskList[1]:
             taskPoint2 += point
             taskLabels[1].text = String(taskPoint2)
-        case "皿洗い":
+        case taskList[2]:
             taskPoint3 += point
             taskLabels[2].text = String(taskPoint3)
         default:

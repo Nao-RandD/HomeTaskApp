@@ -79,23 +79,24 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2El-6M-3fc">
                                 <rect key="frame" x="10" y="98" width="394" height="715"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ユーザー名：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aE-ro-5cz">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登録中ユーザー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aE-ro-5cz">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="394" id="TNL-mN-VNm"/>
                                             <constraint firstAttribute="height" constant="40" id="cVf-Yd-Jjg"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2hO-dH-kLj">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2hO-dH-kLj">
                                         <rect key="frame" x="0.0" y="50" width="394" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="394" id="6Yv-HF-Wqm"/>
                                             <constraint firstAttribute="height" constant="40" id="nvR-Lr-r4B"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1Cy-bk-AdT">
@@ -113,7 +114,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="tapButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ejU-4R-mi5"/>
+                                                    <action selector="tapButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="roG-Li-H7T"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jt0-IH-LF1">
@@ -128,7 +129,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="tapButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ozc-bJ-ZWv"/>
+                                                    <action selector="tapButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yKS-f4-dgR"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -177,9 +178,9 @@
                                             <constraint firstItem="WpM-C5-puI" firstAttribute="width" secondItem="pTz-ao-wgB" secondAttribute="width" id="oir-zN-mxT"/>
                                         </constraints>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="選択中のタスク" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swi-6y-mwJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="選択中のタスク" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swi-6y-mwJ">
                                         <rect key="frame" x="0.0" y="440" width="394" height="214"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -223,6 +224,10 @@
                     <connections>
                         <outlet property="taskLabel" destination="swi-6y-mwJ" id="0s8-nB-HNA"/>
                         <outlet property="userTextField" destination="2hO-dH-kLj" id="a1f-K4-iG8"/>
+                        <outletCollection property="taskButtonCollection" destination="wee-7T-9uC" collectionClass="NSMutableArray" id="aaJ-VS-Z4p"/>
+                        <outletCollection property="taskButtonCollection" destination="jt0-IH-LF1" collectionClass="NSMutableArray" id="0Sh-jA-FyL"/>
+                        <outletCollection property="taskButtonCollection" destination="WpM-C5-puI" collectionClass="NSMutableArray" id="f4g-V6-ywY"/>
+                        <outletCollection property="taskButtonCollection" destination="pTz-ao-wgB" collectionClass="NSMutableArray" id="s74-jM-pZK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -671,6 +676,18 @@
                         <outletCollection property="thirdUserLabel" destination="Jdz-QP-ocC" collectionClass="NSMutableArray" id="AHN-Ou-RUW"/>
                         <outletCollection property="thirdUserLabel" destination="h9X-WF-85B" collectionClass="NSMutableArray" id="qEv-Xf-Xc4"/>
                         <outletCollection property="thirdUserLabel" destination="Gy8-hn-SGw" collectionClass="NSMutableArray" id="qiu-zD-Ohp"/>
+                        <outletCollection property="firstTaskCollection" destination="mdh-Gi-3B0" collectionClass="NSMutableArray" id="1H7-NA-QIg"/>
+                        <outletCollection property="firstTaskCollection" destination="cuX-to-bT0" collectionClass="NSMutableArray" id="ahZ-Kj-RrA"/>
+                        <outletCollection property="firstTaskCollection" destination="Fee-JL-DpP" collectionClass="NSMutableArray" id="seO-Av-Tfd"/>
+                        <outletCollection property="firstTaskCollection" destination="ljO-6s-7WI" collectionClass="NSMutableArray" id="q3O-Jt-28l"/>
+                        <outletCollection property="thirdTaskCollection" destination="cPV-oM-7Bt" collectionClass="NSMutableArray" id="KaM-iX-mhg"/>
+                        <outletCollection property="thirdTaskCollection" destination="EWn-Zo-uxd" collectionClass="NSMutableArray" id="B23-G3-EvC"/>
+                        <outletCollection property="thirdTaskCollection" destination="ALW-L7-7IK" collectionClass="NSMutableArray" id="Q4s-Y9-rbp"/>
+                        <outletCollection property="thirdTaskCollection" destination="SKN-jb-qLx" collectionClass="NSMutableArray" id="6t9-yY-Z6u"/>
+                        <outletCollection property="secondTaskCollection" destination="5YC-ZW-GyL" collectionClass="NSMutableArray" id="HKI-38-vS6"/>
+                        <outletCollection property="secondTaskCollection" destination="c7z-zt-ujN" collectionClass="NSMutableArray" id="3Id-V7-i2a"/>
+                        <outletCollection property="secondTaskCollection" destination="j3B-Ag-ZtP" collectionClass="NSMutableArray" id="cEM-No-Jw6"/>
+                        <outletCollection property="secondTaskCollection" destination="Ddm-hg-bS1" collectionClass="NSMutableArray" id="02U-Pz-ErC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWW-Mx-CpE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -689,8 +706,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="QjB-lr-o4p" kind="relationship" relationship="viewControllers" id="GAs-Ch-yXW"/>
                         <segue destination="ve0-Aj-lJq" kind="relationship" relationship="viewControllers" id="NaO-Dp-3gL"/>
+                        <segue destination="QjB-lr-o4p" kind="relationship" relationship="viewControllers" id="GAs-Ch-yXW"/>
                         <segue destination="ZWO-dK-Pz7" kind="relationship" relationship="viewControllers" id="amk-Fa-u6B"/>
                     </connections>
                 </tabBarController>

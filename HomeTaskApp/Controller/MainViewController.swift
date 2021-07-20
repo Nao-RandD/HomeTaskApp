@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
     @IBOutlet private weak var userTextField: UITextField!
     @IBOutlet private weak var taskLabel: UILabel!
 
+    @IBOutlet var taskButtonCollection: [UIButton]!
+
     private var userPickerView: UIPickerView!
     private var editingField: UITextField?
 
@@ -22,6 +24,9 @@ class MainViewController: UIViewController {
     private var userName = ""
     private let allUsers = User.allCases.map { $0.name }
 
+    private var taskList = ["洗濯入れ", "洗濯出し", "食器入れ", "食器出し" ]
+    private var pointList = [1, 3, 2, 3]
+
     // UserDefaults のインスタンス
     let userDefaults = UserDefaults.standard
     // インスタンス変数
@@ -30,13 +35,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        userTextField.delegate = self
         dateFomatter.dateFormat = "yyyy/MM/dd"
-        //インスタンスを作成
-        DBRef = Database.database().reference()
-        // デフォルト値
-        userDefaults.register(defaults: ["User": "default"])
+        setButton()
 
+        DBRef = Database.database().reference()
+        userDefaults.register(defaults: ["User": allUsers[0]])
+
+        userTextField.delegate = self
         // categoryPickerViewを設定
         userPickerView = UIPickerView()
         userPickerView.delegate = self
@@ -45,66 +50,96 @@ class MainViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-//        userTextField.text = allUsers[0]
         userTextField.text = userDefaults.object(forKey: "User") as? String
-        userName = userDefaults.object(forKey: "User") as? String ?? "default"
+        userName = userDefaults.object(forKey: "User") as? String ?? allUsers[0]
     }
 
     @IBAction func add(_ sender: AnyObject) {
         let data = ["name": taskSelect, "point": taskPoint,
                     "date": dateFomatter.string(from: Date())] as [String : Any]
-        DBRef.child(userName).childByAutoId().setValue(data)
 //        DBRef.childByAutoId().setValue(data)
-        showAlert()
+        DBRef.child(self.userName).childByAutoId().setValue(data)
+//        showAlert(data: data)
+        showSuccessAlert()
         print("タスク\(taskSelect)が選択されており、ポイントは\(taskPoint)です")
-
-    }
-
-    private func showAlert() {
-        //UIAlertControllerのスタイルがalert
-        let alert: UIAlertController = UIAlertController(title: "タスクを送信しました", message:  "お疲れさまでした", preferredStyle:  UIAlertController.Style.alert)
-        // 確定ボタンの処理
-        let confirmAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
-            // 確定ボタンが押された時の処理をクロージャ実装する
-            (action: UIAlertAction!) -> Void in
-            //実際の処理
-            print("確定")
-        })
-
-        //UIAlertControllerにキャンセルボタンと確定ボタンをActionを追加
-        alert.addAction(confirmAction)
-
-        //実際にAlertを表示する
-        present(alert, animated: true, completion: nil)
     }
 
     @IBAction func tapButton1(_ sender: Any) {
-        setLabel("掃除", 5)
+        setLabel(taskList[0], pointList[0])
     }
 
     @IBAction func tapButton2(_ sender: Any) {
-        setLabel("洗濯", 10)
+        setLabel(taskList[1], pointList[1])
     }
 
     @IBAction func tapButton3(_ sender: Any) {
-        setLabel("皿洗い", 3)
+        setLabel(taskList[2], pointList[2])
     }
 
     @IBAction func tapButton4(_ sender: Any) {
-        setLabel("その他", 1)
+        setLabel(taskList[3], pointList[3])
     }
 
     @IBAction private func tappedView(_ sender: Any) {
         print("Viewへのユーザータッチを検知")
         view.endEditing(true)
     }
+}
+
+/// MARK - Private function
+extension MainViewController {
+    private func setButton() {
+        var i = 0
+        for task in taskList {
+            taskButtonCollection[i].setTitle(task, for: .normal)
+            i += 1
+        }
+    }
 
     // 選択中のタスクをUIに更新
     private func setLabel(_ btText: String, _ point: Int) {
-        let text = "\(btText)のボタンが選択されています"
+        let text = "\(btText)は\(point)ポイントです"
         taskLabel.text = text
         taskSelect = btText
         taskPoint = point
+    }
+
+//    private func showAlert(data: [String: Any]) {
+//        let alert = UIAlertController(title: "送信するタスクの確認",
+//                                      message:  "\(userName)として\(data["name"] ?? "")のタスクを送信します",
+//                                      preferredStyle:  UIAlertController.Style.alert)
+//
+//        let confirmAction = UIAlertAction(title: "送信",
+//                                          style: UIAlertAction.Style.default,
+//                                          handler: {
+//                                            (action: UIAlertAction!) -> Void in
+//                                            defer {
+//                                                self.showSuccessAlert()
+//                                            }
+//                                            self.DBRef.child(self.userName).childByAutoId().setValue(data)
+//        })
+//        let cancelAction = UIAlertAction(title: "キャンセル",
+//                                         style: UIAlertAction.Style.cancel,
+//                                         handler:{
+//                                            (action: UIAlertAction!) -> Void in
+//        })
+//
+//        alert.addAction(confirmAction)
+//        alert.addAction(cancelAction)
+//        present(alert, animated: true, completion: nil)
+//    }
+
+    private func showSuccessAlert() {
+        let alert = UIAlertController(title: "タスクの送信完了",
+                                      message:  "お疲れさまでした",
+                                      preferredStyle:  UIAlertController.Style.alert)
+        let confirmAction = UIAlertAction(title: "OK",
+                                          style: UIAlertAction.Style.default,
+                                          handler: {
+                                            (action: UIAlertAction!) -> Void in
+        })
+        alert.addAction(confirmAction)
+        present(alert, animated: true, completion: nil)
     }
 }
 
