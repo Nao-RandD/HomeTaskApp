@@ -104,31 +104,6 @@ extension MainViewController {
         taskPoint = point
     }
 
-//    private func showAlert(data: [String: Any]) {
-//        let alert = UIAlertController(title: "送信するタスクの確認",
-//                                      message:  "\(userName)として\(data["name"] ?? "")のタスクを送信します",
-//                                      preferredStyle:  UIAlertController.Style.alert)
-//
-//        let confirmAction = UIAlertAction(title: "送信",
-//                                          style: UIAlertAction.Style.default,
-//                                          handler: {
-//                                            (action: UIAlertAction!) -> Void in
-//                                            defer {
-//                                                self.showSuccessAlert()
-//                                            }
-//                                            self.DBRef.child(self.userName).childByAutoId().setValue(data)
-//        })
-//        let cancelAction = UIAlertAction(title: "キャンセル",
-//                                         style: UIAlertAction.Style.cancel,
-//                                         handler:{
-//                                            (action: UIAlertAction!) -> Void in
-//        })
-//
-//        alert.addAction(confirmAction)
-//        alert.addAction(cancelAction)
-//        present(alert, animated: true, completion: nil)
-//    }
-
     private func showSuccessAlert() {
         let alert = UIAlertController(title: "タスクの送信完了",
                                       message:  "お疲れさまでした",
