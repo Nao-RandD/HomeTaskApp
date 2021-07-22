@@ -153,6 +153,7 @@ extension MainViewController: UITextFieldDelegate {
         // Keyを指定して保存
         userDefaults.set(textField.text, forKey: "User")
         print("userDefaultsを更新")
+        userName = userDefaults.object(forKey: "User") as? String ?? allUsers[0]
         editingField = nil
     }
 

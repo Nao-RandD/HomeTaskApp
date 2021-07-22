@@ -34,11 +34,14 @@ class AllUserPointViewController: UIViewController {
 
 
     // ポイント管理の変数
-    private var taskPoint1: Int = 0
-    private var taskPoint2: Int = 0
-    private var taskPoint3: Int = 0
-    private var taskPoint4: Int = 0
-    private var totalPoint: Int = 0
+    private var taskPointList1 = [0, 0, 0, 0]
+    private var taskPointList2 = [0, 0, 0, 0]
+    private var taskPointList3 = [0, 0, 0, 0]
+//    private var taskPoint4: Int = 0
+
+    private var totalPoint1: Int = 0
+    private var totalPoint2: Int = 0
+    private var totalPoint3: Int = 0
 
     override func viewDidLoad() {
         //インスタンスを作成
@@ -81,13 +84,13 @@ class AllUserPointViewController: UIViewController {
         switch  user {
         case "Shin":
             firstUserName.text = user
-            hoge(taskLabels: firstUserLabel, totalValue: firstUserSum, point: point, taskName: name)
+            hoge(user: user, taskLabels: firstUserLabel, totalValue: firstUserSum, point: point, taskName: name)
         case "Nao":
             secondUserName.text = user
-            hoge(taskLabels: secondUserLabel, totalValue: secondUserSum, point: point, taskName: name)
+            hoge(user: user,taskLabels: secondUserLabel, totalValue: secondUserSum, point: point, taskName: name)
         case "Ryoya":
             thirdUserName.text = user
-            hoge(taskLabels: thirdUserLabel, totalValue: thirdUserSum, point: point, taskName: name)
+            hoge(user: user, taskLabels: thirdUserLabel, totalValue: thirdUserSum, point: point, taskName: name)
         default:
             print("知らないユーザーなり")
         }
@@ -107,22 +110,63 @@ class AllUserPointViewController: UIViewController {
         }
     }
 
-    private func hoge(taskLabels: [UILabel], totalValue: UILabel, point: Int, taskName: String) {
-        switch taskName {
-        case taskList[0]:
-            taskPoint1 += point
-            taskLabels[0].text = String(taskPoint1)
-        case taskList[1]:
-            taskPoint2 += point
-            taskLabels[1].text = String(taskPoint2)
-        case taskList[2]:
-            taskPoint3 += point
-            taskLabels[2].text = String(taskPoint3)
+    private func hoge(user: String,taskLabels: [UILabel], totalValue: UILabel, point: Int, taskName: String) {
+
+        switch user {
+        case "Shin":
+            switch taskName {
+            case taskList[0]:
+                taskPointList1[0] += point
+                taskLabels[0].text = String(taskPointList1[0])
+            case taskList[1]:
+                taskPointList1[1] += point
+                taskLabels[1].text = String(taskPointList1[1])
+            case taskList[2]:
+                taskPointList1[2] += point
+                taskLabels[2].text = String(taskPointList1[2])
+            default:
+                taskPointList1[3] += point
+                taskLabels[3].text = String(taskPointList1[3])
+            }
+            totalPoint1 += point
+            totalValue.text = String(totalPoint1)
+        case "Nao":
+            switch taskName {
+            case taskList[0]:
+                taskPointList2[0] += point
+                taskLabels[0].text = String(taskPointList2[0])
+            case taskList[1]:
+                taskPointList2[1] += point
+                taskLabels[1].text = String(taskPointList2[1])
+            case taskList[2]:
+                taskPointList2[2] += point
+                taskLabels[2].text = String(taskPointList2[2])
+            default:
+                taskPointList2[3] += point
+                taskLabels[3].text = String(taskPointList2[3])
+            }
+            totalPoint2 += point
+            totalValue.text = String(totalPoint2)
+        case "Ryoya":
+            switch taskName {
+            case taskList[0]:
+                taskPointList3[0] += point
+                taskLabels[0].text = String(taskPointList3[0])
+            case taskList[1]:
+                taskPointList3[1] += point
+                taskLabels[1].text = String(taskPointList3[1])
+            case taskList[2]:
+                taskPointList3[2] += point
+                taskLabels[2].text = String(taskPointList3[2])
+            default:
+                taskPointList3[3] += point
+                taskLabels[3].text = String(taskPointList3[3])
+            }
+            totalPoint3 += point
+            totalValue.text = String(totalPoint3)
         default:
-            taskPoint4 += point
-            taskLabels[3].text = String(taskPoint4)
+            print("知らないユーザーなり")
         }
-        totalPoint += point
-        totalValue.text = String(totalPoint)
+
     }
 }
