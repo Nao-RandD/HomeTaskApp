@@ -57,6 +57,16 @@ class MainViewController: UIViewController {
     @IBAction func add(_ sender: AnyObject) {
         let data = ["name": taskSelect, "point": taskPoint,
                     "date": dateFomatter.string(from: Date())] as [String : Any]
+
+
+        // Realmに追加用
+//        let realm = try! Realm()
+//        let taskList = setTaskItem(contents: realm.objects(TodoItem.self), users: realm.objects(User.self), list: newList, category: newCategory)
+//        try! realm.write {
+//            realm.add(toDo)
+//            print("新しいリスト追加：\(newList)")
+//        }
+
 //        DBRef.childByAutoId().setValue(data)
         DBRef.child(self.userName).childByAutoId().setValue(data)
 //        showAlert(data: data)
@@ -116,6 +126,22 @@ extension MainViewController {
         alert.addAction(confirmAction)
         present(alert, animated: true, completion: nil)
     }
+
+//    func setTaskItem(contents: Results<Item>, users: Results<User>, list: String, category: String) -> TaskItem {
+//        let taskList = TaskItem()
+//        taskList.itemid = contents.count + 1
+//        // FIXME: アカウントは仮でyoshikiの固定値
+//        taskList.accountname = users[0].accountname
+//        // FIXME: 現状は画像の種類が一枚なので固定値
+//        taskList.image = "check"
+//        taskList.title = list
+//        taskList.category = category
+//        taskList.startdate = startDateTime.date.toStringWithCurrentLocale().description
+//        taskList.enddate = endDateTime.date.toStringWithCurrentLocale().description
+//        textField.text = ""
+//
+//        return taskList
+//    }
 }
 
 /// MARK - UITextFieldDelegate
