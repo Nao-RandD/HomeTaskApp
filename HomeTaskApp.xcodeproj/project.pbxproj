@@ -85,6 +85,7 @@
 		9F6246A3262DBB8D003B0195 /* HomeTaskApp */ = {
 			isa = PBXGroup;
 			children = (
+				9FA9B7BA26C5517F00479722 /* Contents */,
 				9F985D472695DCEB0004A3B7 /* Controller */,
 				9F985D462695DCDA0004A3B7 /* View */,
 				9F985D452695DCD10004A3B7 /* Model */,
@@ -133,6 +134,13 @@
 				9FB80EFA26A92B92000D5D74 /* TableMainController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		9FA9B7BA26C5517F00479722 /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contents;
 			sourceTree = "<group>";
 		};
 		F5383A4770936B86FD5F56BA /* Pods */ = {

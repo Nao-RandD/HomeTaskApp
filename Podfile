@@ -7,4 +7,5 @@ target 'HomeTaskApp' do
 
   # Pods for HomeTaskApp
   pod 'Firebase/Database'
+  pod 'RealmSwift'
 end
