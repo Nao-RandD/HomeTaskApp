@@ -19,6 +19,8 @@
 		9F96DB2426A2F80C006BF0CA /* TaskCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F96DB2326A2F80C006BF0CA /* TaskCategory.swift */; };
 		9F985D492695DD900004A3B7 /* TaskPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F985D482695DD900004A3B7 /* TaskPointModel.swift */; };
 		9FA9B7BD26C5540300479722 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA9B7BC26C5540300479722 /* TaskItem.swift */; };
+		9FA9B7BF26C67D1200479722 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA9B7BE26C67D1200479722 /* MenuViewController.swift */; };
+		9FA9B7C126C6BE1B00479722 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA9B7C026C6BE1B00479722 /* AddTaskViewController.swift */; };
 		9FB80EFB26A92B92000D5D74 /* TableMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80EFA26A92B92000D5D74 /* TableMainController.swift */; };
 		9FD4E4062657BA990011F283 /* AllUserPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD4E4052657BA990011F283 /* AllUserPointViewController.swift */; };
 		AD310E2148A6A7B5788AF1A1 /* Pods_HomeTaskApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB259D3702010514CB73930 /* Pods_HomeTaskApp.framework */; };
@@ -40,6 +42,8 @@
 		9F96DB2326A2F80C006BF0CA /* TaskCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCategory.swift; sourceTree = "<group>"; };
 		9F985D482695DD900004A3B7 /* TaskPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPointModel.swift; sourceTree = "<group>"; };
 		9FA9B7BC26C5540300479722 /* TaskItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskItem.swift; path = HomeTaskApp/Contents/TaskItem.swift; sourceTree = SOURCE_ROOT; };
+		9FA9B7BE26C67D1200479722 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		9FA9B7C026C6BE1B00479722 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		9FB80EFA26A92B92000D5D74 /* TableMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableMainController.swift; sourceTree = "<group>"; };
 		9FD4E4052657BA990011F283 /* AllUserPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUserPointViewController.swift; sourceTree = "<group>"; };
 		DEB259D3702010514CB73930 /* Pods_HomeTaskApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeTaskApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +130,8 @@
 				9F5F992B2650BA550045BCB5 /* EditViewController.swift */,
 				9FD4E4052657BA990011F283 /* AllUserPointViewController.swift */,
 				9FB80EFA26A92B92000D5D74 /* TableMainController.swift */,
+				9FA9B7BE26C67D1200479722 /* MenuViewController.swift */,
+				9FA9B7C026C6BE1B00479722 /* AddTaskViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -263,9 +269,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F985D492695DD900004A3B7 /* TaskPointModel.swift in Sources */,
+				9FA9B7C126C6BE1B00479722 /* AddTaskViewController.swift in Sources */,
 				9FA9B7BD26C5540300479722 /* TaskItem.swift in Sources */,
 				9F5F992C2650BA550045BCB5 /* EditViewController.swift in Sources */,
 				9FD4E4062657BA990011F283 /* AllUserPointViewController.swift in Sources */,
+				9FA9B7BF26C67D1200479722 /* MenuViewController.swift in Sources */,
 				9F6246A9262DBB8D003B0195 /* MainViewController.swift in Sources */,
 				9F6246A5262DBB8D003B0195 /* AppDelegate.swift in Sources */,
 				9F6246A7262DBB8D003B0195 /* SceneDelegate.swift in Sources */,
